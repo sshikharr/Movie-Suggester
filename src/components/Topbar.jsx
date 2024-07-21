@@ -1,11 +1,12 @@
 import { useRecoilState, useRecoilValue} from "recoil";
-import { count, searchState } from "../store/store1";
+import { count, searchState, user } from "../store/store1";
 import { useNavigate } from "react-router-dom";
 
 function Topbar(){
     const navigate = useNavigate();
     const [search, setSearch] = useRecoilState(searchState);
     const notificationCount = useRecoilValue(count);
+    const [storedUser, setStoredUser] = useRecoilState(user)
     return (
         <>
         <div className="flex w-full justify-between pt-4">
@@ -13,7 +14,7 @@ function Topbar(){
                 Movie Suggester
             </div>
             
-                <div className=" pt-1 mr-4 w-1/2 h-12">
+                <div className=" pt-1 mr-4 w-1/2 h-12 ml-2">
                     <input type="text" placeholder="Search Movie..." className="w-full h-full pl-4"
                      value={search} onChange={(e)=>setSearch(e.target.value)}></input>
                 </div>
@@ -30,7 +31,13 @@ function Topbar(){
                 </div>
                 </div>    
                 </div>
-            
+            <div className="text-white flex flex-cols justify-center ml-4">
+                <button className="" onClick={()=>{
+                    localStorage.removeItem("storedUser");
+                    setStoredUser(null);
+                    navigate('/signin')
+                }}>Logout</button>
+            </div>
         </div>
         </>
     )

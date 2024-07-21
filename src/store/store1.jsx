@@ -44,3 +44,12 @@ export const count = selector({
         return list.length;
     }
 })
+
+export const user = atom({
+    key: "user",
+    default:{
+        name:"",
+        email:"",
+        password:""
+    }
+})
