@@ -13,7 +13,7 @@ function Signin(){
     const handleClick = ()=>{
         const storedUser = JSON.parse(localStorage.getItem("storedUser"));
         if(storedUser && storedUser.email == email && storedUser.password == password){
-            navigate("/")
+            navigate("/home")
             setNewUser(storedUser);
         }else{
             alert("Invalid Credentials");
