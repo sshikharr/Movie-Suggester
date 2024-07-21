@@ -13,11 +13,12 @@ function App() {
     <RecoilRoot>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<HomePage/>}/>
+          <Route path='/home' element={<HomePage/>}/>
           <Route path='/movie' element={<Movie/>}/>
           <Route path='/wishlist' element={<WishList/>}/>
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Redirect from="/" to="/signin" />
         </Routes>
       </BrowserRouter>
       </RecoilRoot>

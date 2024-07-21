@@ -10,7 +10,7 @@ function Topbar(){
     return (
         <>
         <div className="flex w-full justify-between pt-4">
-            <div className=" text-white text-xl lg:pt-3 lg:text-3xl font-bold" onClick={()=>navigate("/")}>
+            <div className=" text-white text-xl lg:pt-3 lg:text-3xl font-bold" onClick={()=>navigate("/home")}>
                 Movie Suggester
             </div>
             
