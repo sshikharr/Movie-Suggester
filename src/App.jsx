@@ -11,7 +11,7 @@ function App() {
     <RecoilRoot>
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<HomePage/>}/>
+          <Route path='/' element={<HomePage/>}/>
           <Route path='/movie' element={<Movie/>}/>
           <Route path='/wishlist' element={<WishList/>}/>
         </Routes>
